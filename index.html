@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" data-palette="cream">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Billy Bouksi — Creative Technologist</title>
+<script>(function(){try{var p=localStorage.getItem('bouksi-palette');if(p)document.documentElement.setAttribute('data-palette',p);}catch(e){}})();</script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="site-logo">[bouksi<span class="blink">_</span>]</a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="works.html">Works</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-top">
+      <p>This website is the home of my artistic and professional work, in the projects it manifested. They vary in nature: games, small animation films, installations, immersive mediums (VR, projections), interaction design, among others.</p>
+      <div class="palette-switcher" role="group" aria-label="Colour palette">
+        <button type="button" data-palette="cream" class="palette-swatch-cream" aria-pressed="true" aria-label="Cream palette"></button>
+        <button type="button" data-palette="sky" class="palette-swatch-sky" aria-pressed="false" aria-label="Sky palette"></button>
+        <button type="button" data-palette="mustard" class="palette-swatch-mustard" aria-pressed="false" aria-label="Mustard palette"></button>
+        <button type="button" data-palette="teal" class="palette-swatch-teal" aria-pressed="false" aria-label="Teal palette"></button>
+        <button type="button" data-palette="rose" class="palette-swatch-rose" aria-pressed="false" aria-label="Rose palette"></button>
+        <button type="button" data-palette="ink" class="palette-swatch-ink" aria-pressed="false" aria-label="Ink palette"></button>
+      </div>
+    </div>
+    <p>Projects are organised by category in <a href="works.html">Works</a>. For a more abstract view of the body of work, visit <a href="gallery.html">Gallery</a>.</p>
+  </section>
+
+  <section class="section">
+    <div class="featured-card">
+      <span class="featured-label">Featured Project</span>
+      <a href="projects/poseidons-island.html" id="featured-link">
+        <img class="featured-image" id="featured-image" src="assets/images/poseidons-island/cover.jpg" alt="Still from Poseidon's Island">
+      </a>
+      <div class="featured-info">
+        <h3 id="featured-title">Poseidon's Island</h3>
+        <p id="featured-summary">A 20-minute 3D animation produced for Vmuseum Corfu.</p>
+      </div>
+      <button class="featured-next-btn" id="featured-next" type="button">Next &rarr;</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>&copy; 2026 Billy Bouksi</span>
+  <!-- TODO: replace with real email / social link -->
+  <a href="#">Get in touch</a>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

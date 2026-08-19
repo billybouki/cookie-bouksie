@@ -1,0 +1,12 @@
+{
+  "name": "bouksi-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "bouksi.com — static site",
+  "scripts": {
+    "dev": "browser-sync start --server --files \"**/*.html, assets/css/**/*.css, assets/js/**/*.js\" --no-notify"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.2"
+  }
+}
