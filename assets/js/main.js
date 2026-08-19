@@ -78,6 +78,42 @@
       summary: 'An AI-driven installation generating a unique, one-of-a-kind poster for each visitor.',
       cover: 'assets/images/edition-of-one/cover.jpg',
       url: 'projects/edition-of-one.html'
+    },
+    {
+      title: 'Athens by Sound',
+      summary: 'An immersive sound installation with hanging headphone listening stations.',
+      cover: 'assets/images/athens-by-sound/02.jpg',
+      url: 'projects/athens-by-sound.html'
+    },
+    {
+      title: 'Germanos',
+      summary: 'A real-time 3D character animation loop for an interactive brand experience.',
+      cover: 'assets/images/germanos/cover.jpg',
+      url: 'projects/germanos.html'
+    },
+    {
+      title: 'Memory Cinema',
+      summary: 'A generative visualization built from captured movement data.',
+      cover: 'assets/images/memory-cinema/cover.jpg',
+      url: 'projects/memory-cinema.html'
+    },
+    {
+      title: 'Narcos',
+      summary: 'An immersive, Narcos-branded interactive experience combining set design with a treadmill game.',
+      cover: 'assets/images/narcos/cover.jpg',
+      url: 'projects/narcos.html'
+    },
+    {
+      title: 'Siemens',
+      summary: 'A projection-mapping installation using illuminated geometry and animated visuals.',
+      cover: 'assets/images/siemens/cover.jpg',
+      url: 'projects/siemens.html'
+    },
+    {
+      title: 'TTT',
+      summary: 'A motion-tracked table tennis game with real-time player analytics.',
+      cover: 'assets/images/ttt/cover.jpg',
+      url: 'projects/ttt.html'
     }
   ];
 
