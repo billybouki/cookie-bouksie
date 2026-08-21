@@ -54,10 +54,10 @@
       url: 'projects/poseidons-island.html'
     },
     {
-      title: 'Komprai',
+      title: 'Love My Self',
       summary: 'A single continuous-take music video shot on a 360 camera in Mavromichali, Athens.',
-      cover: 'assets/images/komprai/cover.jpg',
-      url: 'projects/komprai.html'
+      cover: 'assets/images/love-my-self/cover.jpg',
+      url: 'projects/love-my-self.html'
     },
     {
       title: 'Ermafa',
@@ -66,10 +66,10 @@
       url: 'projects/ermafa.html'
     },
     {
-      title: 'VHF',
+      title: 'Verkehrshaus',
       summary: 'A multiplayer energy-planning game that puts visitors in the seat of a power plant manager, trading resources across borders.',
-      cover: 'assets/images/vhf/cover.jpg',
-      url: 'projects/vhf.html'
+      cover: 'assets/images/verkehrshaus/cover.jpg',
+      url: 'projects/verkehrshaus.html'
     },
     {
       title: 'Potential Drawer',
@@ -102,16 +102,16 @@
       url: 'projects/memory-cinema.html'
     },
     {
-      title: 'Narcos',
+      title: 'Narcos: Manhunt',
       summary: 'An immersive, Narcos-branded interactive experience combining set design with a treadmill game.',
-      cover: 'assets/images/narcos/cover.jpg',
-      url: 'projects/narcos.html'
+      cover: 'assets/images/narcos-manhunt/cover.jpg',
+      url: 'projects/narcos-manhunt.html'
     },
     {
-      title: 'Siemens',
+      title: 'Siemens Markenfilm',
       summary: 'A projection-mapping installation using illuminated geometry and animated visuals.',
-      cover: 'assets/images/siemens/cover.jpg',
-      url: 'projects/siemens.html'
+      cover: 'assets/images/siemens-markenfilm/cover.jpg',
+      url: 'projects/siemens-markenfilm.html'
     },
     {
       title: 'TTT',
@@ -130,6 +130,24 @@
       summary: 'A luminous, wire-built human figure — a light sculpture in electroluminescent wire.',
       cover: 'assets/images/kalliplokamos/cover.jpg',
       url: 'projects/kalliplokamos.html'
+    },
+    {
+      title: 'Vagonetto',
+      summary: 'A museum installation with floor projection, sculptural forms, and interactive lighting.',
+      cover: 'assets/images/vagonetto/vagonetto_16.jpg',
+      url: 'projects/vagonetto.html'
+    },
+    {
+      title: 'Tee Tiler',
+      summary: 'A touchscreen kiosk installation for designing and customizing your own t-shirt in-store.',
+      cover: 'assets/images/tee-tiler/cover.png',
+      url: 'projects/tee-tiler.html'
+    },
+    {
+      title: 'Gendarmenmarkt Light Festival',
+      summary: 'A projection-mapping piece created for the Gendarmenmarkt light festival, Berlin.',
+      cover: 'assets/images/gendarmenmarkt-light-festival/01.jpg',
+      url: 'projects/gendarmenmarkt-light-festival.html'
     }
   ];
 
@@ -388,5 +406,23 @@
         render();
       });
     }
+  });
+})();
+
+// Gallery video mute toggle — each clip autoplays muted; the overlay
+// button lets a visitor turn its sound on without leaving the grid.
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.gallery-grid .mute-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var video = btn.previousElementSibling;
+        if (!video) return;
+        video.muted = !video.muted;
+        btn.textContent = video.muted ? '🔇' : '🔊';
+        btn.setAttribute('aria-pressed', video.muted ? 'false' : 'true');
+        btn.setAttribute('aria-label', video.muted ? 'Unmute' : 'Mute');
+      });
+    });
   });
 })();
