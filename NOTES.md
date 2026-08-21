@@ -35,16 +35,15 @@ implemented yet, do it first:
 
 ## New asset folders with NO project page yet
 
-Two folders showed up in `assets/images/` this session that haven't been
-turned into project pages, wired into `works.html`, or added to
-`FEATURED_PROJECTS` in `main.js`:
-
-- `assets/images/ferro/` — `01.jpg`, `cover.jpg`. Likely matches the old
-  site's `images/machines/FERRO/` — probably category **Machines**, but
-  unconfirmed. No page built yet.
-- `assets/images/kalliplokamos/` — `01.jpg`, `cover.jpg`. No context yet on
-  what this project is — needs Billy's input on category/description, or at
-  minimum look at the images before guessing.
+**DONE** — `ferro.html` and `kalliplokamos.html` built, wired into
+`works.html` (category **Installations** in the new taxonomy, keyword
+**Electronics** — see below), added to `FEATURED_PROJECTS`, and spliced
+into the project-nav loop (`ermafa → ferro → kalliplokamos → vhf`).
+Category and description are still guesses from the images alone — Ferro
+in particular assumes a ferrofluid display from the coil/PCB rig plus the
+crowd around a reflective surface in `01.jpg`; Kalliplokamos assumes an
+EL-wire figure sculpture. Both need Billy's confirmation (role/client/year
+are all TBD, same as every other placeholder project page).
 
 Follow the same pattern as the last several projects added (see
 `projects/ttt.html` or `projects/siemens.html` for the simplest template):
@@ -72,7 +71,7 @@ converted to that same video pair instead of shipped as a GIF.
 | Komprai | `komprai.html` | Realities (guess) | placeholder | Need artist/track name, date, post-production details from Billy. |
 | Ermafa | `ermafa.html` | Machines ✅ | placeholder | Has real video (partner's footage from intolight.de, credited). Images added by Billy. |
 | VHF | `vhf.html` | Interactives & Games (guess) | placeholder | Guessed from photos (touchscreen energy-planning table, France/CH/DE). |
-| AI Drawer | `ai-drawer.html` | Products & Commercial (guess) | placeholder | YouTube embed (`98aAtKarF2A`), titled "AI as a brand experience" on YouTube. |
+| Potential Drawer | `potential-drawer.html` | Products & Commercial (guess) | placeholder | Renamed from "AI Drawer" — folder and all references updated. YouTube embed (`98aAtKarF2A`), titled "AI as a brand experience" on YouTube. |
 | Edition of One | `edition-of-one.html` | Interactives & Games (guess) | placeholder | **Possibly the "Posters" / Mathildenhöhe AI project** from the original brief — photo shows German museum text + Jugendstil mural. Unconfirmed, flagged to Billy, not yet corrected. |
 | Athens by Sound | `athens-by-sound.html` | Interactives & Games (guess) | placeholder | Headphone listening installation. |
 | Germanos | `germanos.html` | Interactives & Games (guess) | placeholder | Guessed client = Germanos (Greek retailer) from folder name only. |
@@ -80,6 +79,8 @@ converted to that same video pair instead of shipped as a GIF.
 | Narcos | `narcos.html` | Interactives & Games (guess) | placeholder | Treadmill game branded "Narcos Plata" + vintage tape/radar prop photos — may actually be two different things merged into one project, needs confirming. |
 | Siemens | `siemens.html` | Projections (guess) | placeholder | Projection-mapped checkerboard pillar installation. |
 | TTT | `ttt.html` | Interactives & Games (guess) | placeholder | Kinect-tracked table tennis game, matches old site's `games/TTT`. |
+| Ferro | `ferro.html` | Installations (guess) | placeholder | Coil/PCB rig + reflective surface — guessed ferrofluid kinetic sculpture from the name and `01.jpg`. |
+| Kalliplokamos | `kalliplokamos.html` | Installations (guess) | placeholder | Glowing EL-wire sculpture in a human figure. No context beyond the images — needs Billy's input. |
 
 **Still no images/pages at all**: Vhf ~~(done)~~, Converse, Milano, AI
 Photobooth, Pinball, Screamers.

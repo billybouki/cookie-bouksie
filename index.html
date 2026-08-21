@@ -31,6 +31,7 @@
         <button type="button" data-palette="teal" class="palette-swatch-teal" aria-pressed="false" aria-label="Teal palette"></button>
         <button type="button" data-palette="rose" class="palette-swatch-rose" aria-pressed="false" aria-label="Rose palette"></button>
         <button type="button" data-palette="ink" class="palette-swatch-ink" aria-pressed="false" aria-label="Ink palette"></button>
+        <button type="button" data-palette="plum" class="palette-swatch-plum" aria-pressed="false" aria-label="Plum palette"></button>
       </div>
     </div>
     <p>Projects are organised by category in <a href="works.html">Works</a>. For a more abstract view of the body of work, visit <a href="gallery.html">Gallery</a>.</p>
@@ -38,15 +39,25 @@
 
   <section class="section">
     <div class="featured-card">
-      <span class="featured-label">Featured Project</span>
+      <div class="featured-top">
+        <span class="featured-label">Random Project</span>
+        <button class="featured-next-btn" id="featured-next" type="button">Next &rarr;</button>
+      </div>
+      <div class="featured-rule" id="featured-rule" aria-hidden="true">
+        <span class="featured-rule-dashes">────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</span>
+        <span class="featured-rule-wave">╱ ╲</span>
+      </div>
       <a href="projects/poseidons-island.html" id="featured-link">
+        <video class="featured-image" id="featured-video" autoplay muted loop playsinline style="display:none">
+          <source type="video/webm">
+          <source type="video/mp4">
+        </video>
         <img class="featured-image" id="featured-image" src="assets/images/poseidons-island/cover.jpg" alt="Still from Poseidon's Island">
       </a>
       <div class="featured-info">
         <h3 id="featured-title">Poseidon's Island</h3>
         <p id="featured-summary">A 20-minute 3D animation produced for Vmuseum Corfu.</p>
       </div>
-      <button class="featured-next-btn" id="featured-next" type="button">Next &rarr;</button>
     </div>
   </section>
 

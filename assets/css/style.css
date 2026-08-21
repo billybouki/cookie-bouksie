@@ -7,15 +7,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600&display=swap');
 
 /* ---- indent scale ------------------------------------------------------ */
-/* Left-edge alignment is deliberate, not incidental: each level nests
-   further right than the one before it.
-     --indent-0 : site chrome (header logo, footer)
-     --indent-1 : page content (hero text, section wrapper)
-     --indent-2 : content nested a level deeper (e.g. inside a featured card) */
+/* Site chrome and page content share the same left edge on purpose — a
+   page's title lines up with the logo above it. Only content nested a
+   level deeper (e.g. inside a featured card) steps in further.
+     --indent-0 : site chrome (header logo, footer) and page content
+                  (hero text, section wrapper, titles)
+     --indent-2 : content nested a level deeper */
 :root {
   --indent-0: 1.5rem;
-  --indent-1: 3rem;
-  --indent-2: 4.5rem;
+  --indent-1: 1.5rem;
+  --indent-2: 3rem;
 }
 
 /* ---- palettes -------------------------------------------------------- */
@@ -39,17 +40,17 @@
 }
 
 [data-palette="teal"] {
-  --bg: #1f5b54;
-  --fg: #f2ede4;
-  --accent: #f2c14e;
-  --accent-2: #d94f2b;
+  --bg: #00a878;
+  --fg: #0f2a20;
+  --accent: #16324a;
+  --accent-2: #2b1b12;
 }
 
 [data-palette="rose"] {
   --bg: #e4c9c0;
   --fg: #2b1b12;
   --accent: #6b4226;
-  --accent-2: #1f5b54;
+  --accent-2: #00a878;
 }
 
 [data-palette="sky"] {
@@ -64,6 +65,23 @@
   --fg: #f2e8d5;
   --accent: #d9a441;
   --accent-2: #a9bfd1;
+}
+
+[data-palette="plum"] {
+  --bg: #6b2d5c;
+  --fg: #f2ede4;
+  --accent: #f2c14e;
+  --accent-2: #add8e6;
+}
+
+/* Palette swaps (theme switcher, or a category preview on Works) crossfade
+   rather than snap — every element using --bg/--fg/--accent/--accent-2
+   picks it up for free since the transition just watches the resolved
+   colour. Not gated behind prefers-reduced-motion: a colour fade isn't the
+   kind of movement that setting exists to guard against (unlike the
+   scrolling waveform trace, which does respect it). */
+*, *::before, *::after {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
 /* ---- reset ------------------------------------------------------------ */
@@ -190,9 +208,10 @@ p { margin: 0 0 1.25em; max-width: 60ch; }
 .palette-swatch-cream   { background: #f2ede4; }
 .palette-swatch-sky     { background: #add8e6; }
 .palette-swatch-mustard { background: #f2c14e; }
-.palette-swatch-teal    { background: #1f5b54; }
+.palette-swatch-teal    { background: #00a878; }
 .palette-swatch-rose    { background: #e4c9c0; }
 .palette-swatch-ink     { background: #16324a; }
+.palette-swatch-plum    { background: #6b2d5c; }
 
 /* ---- buttons / links as blocks ------------------------------------------- */
 
@@ -228,6 +247,13 @@ p { margin: 0 0 1.25em; max-width: 60ch; }
   border: 2px solid var(--fg);
 }
 
+.project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.4em;
+}
+
 /* ---- main / sections ------------------------------------------------------ */
 
 main { display: block; }
@@ -242,7 +268,8 @@ main { display: block; }
   padding: 1.5rem 1.5rem 0.75rem var(--indent-1);
 }
 
-.hero-top {
+.hero-top,
+.page-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -255,11 +282,39 @@ main { display: block; }
   margin-bottom: 0;
 }
 
+.page-top h1 {
+  margin-bottom: 0;
+}
+
+/* ---- page settings (Works: mute, room for more later) ---------------------- */
+
+.page-settings {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.page-settings button {
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  background: transparent;
+  border: 2px solid var(--fg);
+  color: var(--fg);
+  padding: 0.5em 0.9em;
+  cursor: pointer;
+}
+
+.page-settings button[aria-pressed="true"] {
+  background: var(--fg);
+  color: var(--bg);
+}
+
 /* ---- featured project block ------------------------------------------------ */
 
 .featured-card {
   max-width: 720px;
-  margin-left: calc(var(--indent-2) - var(--indent-1));
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -272,13 +327,58 @@ main { display: block; }
   border: 2px solid var(--fg);
 }
 
-.featured-label {
-  display: block;
-  width: 50vw;
-  box-sizing: border-box;
-  padding: 0 0 0.4rem;
+.featured-top {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 0.4rem;
   margin-bottom: 0.5rem;
-  border-bottom: 1px solid var(--fg);
+}
+
+.featured-top .featured-next-btn {
+  flex-shrink: 0;
+}
+
+/* a continuous box-drawing line with a small ╱╲ peak travelling through it
+   — doubles as the auto-advance timer for the random project below: each
+   full pass swaps in a new one (see main.js) */
+.featured-rule {
+  position: relative;
+  height: 1rem;
+  line-height: 1rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--fg);
+}
+
+.featured-rule-dashes {
+  display: block;
+}
+
+.featured-rule-wave {
+  position: absolute;
+  top: 0;
+  left: -10%;
+  background: var(--bg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .featured-rule-wave {
+    animation: featured-rule-travel 4s linear infinite;
+  }
+}
+
+@keyframes featured-rule-travel {
+  from { left: -10%; }
+  to { left: 110%; }
+}
+
+.featured-label {
   font-family: 'Space Mono', monospace;
   text-transform: uppercase;
   font-size: 1.1rem;
@@ -311,7 +411,6 @@ main { display: block; }
 }
 
 .featured-next-btn {
-  align-self: flex-end;
   font-family: 'Space Mono', monospace;
   text-transform: uppercase;
   font-size: 0.75rem;
@@ -370,16 +469,31 @@ main { display: block; }
 
 .project-card-body h3 { margin-bottom: 0.4em; }
 
+/* card body filled with its primary category's colour, same mapping as
+   the category-filter buttons above */
+.project-card[data-category^="immersive"]    .project-card-body { background: #add8e6; color: #16324a; }
+.project-card[data-category^="animation"]     .project-card-body { background: #f2c14e; color: #16324a; }
+.project-card[data-category^="games"]         .project-card-body { background: #e4c9c0; color: #16324a; }
+.project-card[data-category^="installations"] .project-card-body { background: #00a878; color: #0f2a20; }
+.project-card[data-category^="music"]         .project-card-body { background: #16324a; color: #f2ede4; }
+.project-card[data-category^="various"]       .project-card-body { background: #a39a8a; color: #1b1b1b; }
+
 /* ---- category filter (projects page) ---------------------------------------- */
 
 .category-filter {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 0.6rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .category-filter button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   font-family: 'Space Mono', monospace;
   text-transform: uppercase;
   font-size: 0.75rem;
@@ -391,7 +505,89 @@ main { display: block; }
   cursor: pointer;
 }
 
+/* each button is filled with its category colour by default; selecting it
+   drops the fill to transparent, so the highlighted one reads as "open" */
+.category-filter button[data-category="immersive"]    { background: #add8e6; color: #16324a; border-color: #16324a; }
+.category-filter button[data-category="animation"]     { background: #f2c14e; color: #16324a; border-color: #16324a; }
+.category-filter button[data-category="games"]         { background: #e4c9c0; color: #16324a; border-color: #16324a; }
+.category-filter button[data-category="installations"] { background: #00a878; color: #0f2a20; border-color: #0f2a20; }
+.category-filter button[data-category="music"]         { background: #16324a; color: #f2ede4; border-color: #f2ede4; }
+.category-filter button[data-category="various"]       { background: #a39a8a; color: #1b1b1b; border-color: #1b1b1b; }
+
 .category-filter button[aria-pressed="true"] {
+  background: transparent;
+  color: var(--fg);
+  border-color: var(--fg);
+}
+
+.wave-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 1.05rem;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 2px solid var(--fg);
+  background: #1b1b1b;
+}
+
+/* the Music/ink trace is too dark to read against the default dark
+   screen, so it gets a light one instead */
+.wave-screen--light { background: #f2ede4; }
+
+.wave {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.wave-track {
+  transform-box: fill-box;
+}
+
+/* active state: the fill drops to transparent (see [aria-pressed="true"]
+   above) and the trace starts scrolling, like a live oscilloscope signal */
+@media (prefers-reduced-motion: no-preference) {
+  .category-filter button[aria-pressed="true"] .wave-track {
+    animation: wave-scroll 1.6s linear infinite;
+  }
+}
+
+@keyframes wave-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* reduced-motion fallback: no scroll, so the border carries the cue instead */
+@media (prefers-reduced-motion: reduce) {
+  .category-filter button[aria-pressed="true"] {
+    border-width: 4px;
+  }
+}
+
+.keyword-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+}
+
+.keyword-filter button {
+  white-space: nowrap;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  font-size: 0.62rem;
+  letter-spacing: 0.03em;
+  background: transparent;
+  border: 1px solid var(--fg);
+  color: var(--fg);
+  padding: 0.3em 0.7em;
+  cursor: pointer;
+}
+
+.keyword-filter button[aria-pressed="true"] {
   background: var(--fg);
   color: var(--bg);
 }

@@ -19,156 +19,222 @@
   </nav>
 </header>
 
-<div class="palette-switcher-row">
-  <div class="palette-switcher" role="group" aria-label="Colour palette">
-    <button type="button" data-palette="cream" class="palette-swatch-cream" aria-pressed="true" aria-label="Cream palette"></button>
-    <button type="button" data-palette="sky" class="palette-swatch-sky" aria-pressed="false" aria-label="Sky palette"></button>
-    <button type="button" data-palette="mustard" class="palette-swatch-mustard" aria-pressed="false" aria-label="Mustard palette"></button>
-    <button type="button" data-palette="teal" class="palette-swatch-teal" aria-pressed="false" aria-label="Teal palette"></button>
-    <button type="button" data-palette="rose" class="palette-swatch-rose" aria-pressed="false" aria-label="Rose palette"></button>
-    <button type="button" data-palette="ink" class="palette-swatch-ink" aria-pressed="false" aria-label="Ink palette"></button>
-  </div>
-</div>
-
 <main>
   <section class="section">
-    <h1>Works</h1>
-    <p class="mono works-keywords">Projections &middot; Machines &middot; 3D Graphics &amp; Motion Design &middot; Interactives &amp; Games &middot; Products &amp; Commercial &middot; Realities</p>
+    <div class="page-top">
+      <h1>Works</h1>
+      <div class="page-settings">
+        <button type="button" id="mute-toggle" aria-pressed="false">🔊 Sound</button>
+      </div>
+    </div>
 
     <div class="category-filter" role="group" aria-label="Filter by category">
-      <button type="button" data-category="all" aria-pressed="true">All</button>
-      <button type="button" data-category="projections" aria-pressed="false">Projections</button>
-      <button type="button" data-category="machines" aria-pressed="false">Machines</button>
-      <button type="button" data-category="3d-motion" aria-pressed="false">3D Graphics &amp; Motion Design</button>
-      <button type="button" data-category="interactives-games" aria-pressed="false">Interactives &amp; Games</button>
-      <button type="button" data-category="products-commercial" aria-pressed="false">Products &amp; Commercial</button>
-      <button type="button" data-category="realities" aria-pressed="false">Realities</button>
-      <button type="button" data-category="other" aria-pressed="false">Other</button>
+      <button type="button" data-category="immersive" aria-pressed="false">
+        <span class="wave-screen">
+          <svg class="wave" viewBox="0 0 30 16" aria-hidden="true">
+            <g class="wave-track">
+              <path d="M0 8 C5 0, 10 0, 15 8 C20 16, 25 16, 30 8 C35 0, 40 0, 45 8 C50 16, 55 16, 60 8" stroke="#add8e6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </span>
+        <span>Immersive</span>
+      </button>
+      <button type="button" data-category="animation" aria-pressed="false">
+        <span class="wave-screen">
+          <svg class="wave" viewBox="0 0 30 16" aria-hidden="true">
+            <g class="wave-track">
+              <path d="M0 14 L7.5 2 L15 14 L22.5 2 L30 14 L37.5 2 L45 14 L52.5 2 L60 14" stroke="#f2c14e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </span>
+        <span>Animation</span>
+      </button>
+      <button type="button" data-category="games" aria-pressed="false">
+        <span class="wave-screen">
+          <svg class="wave" viewBox="0 0 30 16" aria-hidden="true">
+            <g class="wave-track">
+              <path d="M0 14 H7 V2 H15 V14 H22 V2 H30 V14 H37 V2 H45 V14 H52 V2 H60 V14" stroke="#e4c9c0" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </span>
+        <span>Games</span>
+      </button>
+      <button type="button" data-category="installations" aria-pressed="false">
+        <span class="wave-screen">
+          <svg class="wave" viewBox="0 0 30 16" aria-hidden="true">
+            <g class="wave-track">
+              <path d="M0 14 H4 V2 H8 V14 H15 V2 H19 V14 H26 V2 H30 V14 H34 V2 H38 V14 H45 V2 H49 V14 H56 V2 H60 V14" stroke="#00a878" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </span>
+        <span>Installations</span>
+      </button>
+      <button type="button" data-category="music" aria-pressed="false">
+        <span class="wave-screen wave-screen--light">
+          <svg class="wave" viewBox="0 0 30 16" aria-hidden="true">
+            <g class="wave-track">
+              <path d="M0 14 L30 2 L30 14 L60 2 L60 14" stroke="#16324a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </span>
+        <span>Music</span>
+      </button>
+      <button type="button" data-category="various" aria-pressed="false">
+        <span class="wave-screen">
+          <svg class="wave" viewBox="0 0 30 16" aria-hidden="true">
+            <g class="wave-track">
+              <path d="M0 8 L3 2 L6 13 L9 4 L12 11 L15 1 L18 9 L21 6 L24 14 L27 3 L30 8 L33 2 L36 13 L39 4 L42 11 L45 1 L48 9 L51 6 L54 14 L57 3 L60 8" stroke="#f2ede4" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </span>
+        <span>Various</span>
+      </button>
+    </div>
+
+    <div class="keyword-filter" role="group" aria-label="Filter by keyword">
+      <button type="button" data-keyword="touchscreens" aria-pressed="false">Touchscreens</button>
+      <button type="button" data-keyword="ai" aria-pressed="false">AI</button>
+      <button type="button" data-keyword="kinetics" aria-pressed="false">Kinetics</button>
+      <button type="button" data-keyword="projectionmapping" aria-pressed="false">Projection Mapping</button>
+      <button type="button" data-keyword="vr" aria-pressed="false">VR</button>
+      <button type="button" data-keyword="museum" aria-pressed="false">Museum</button>
+      <button type="button" data-keyword="video" aria-pressed="false">Video</button>
+      <button type="button" data-keyword="brandexperience" aria-pressed="false">Brand Experience</button>
+      <button type="button" data-keyword="electronics" aria-pressed="false">Electronics</button>
     </div>
 
     <!--
-      Cards are grouped by category (matching the filter button order above)
-      so the unfiltered grid reads as organised rather than random.
+      Cards are grouped by primary category (matching the filter button order
+      above) so the unfiltered grid reads as organised rather than random.
+      A card's data-category can list more than one slug (space-separated)
+      when a project spans categories — the card body is filled with the
+      first (primary) category's colour, same mapping as the filter buttons.
       Add one .project-card per project as content is ready.
     -->
     <div class="project-grid">
 
-      <a class="project-card" href="projects/siemens.html" data-category="projections">
+      <a class="project-card" href="projects/siemens.html" data-category="immersive installations" data-keywords="projectionmapping">
         <div class="project-card-media">
           <img src="assets/images/siemens/cover.jpg" alt="Still from Siemens">
         </div>
         <div class="project-card-body">
-          <span class="tag">Projections</span>
           <h3>Siemens</h3>
         </div>
       </a>
 
-      <a class="project-card" href="projects/ermafa.html" data-category="machines">
-        <div class="project-card-media">
-          <img src="assets/images/ermafa/cover.jpg" alt="Still from Ermafa">
-        </div>
-        <div class="project-card-body">
-          <span class="tag">Machines</span>
-          <h3>Ermafa</h3>
-        </div>
-      </a>
-
-      <a class="project-card" href="projects/poseidons-island.html" data-category="3d-motion">
-        <div class="project-card-media">
-          <img src="assets/images/poseidons-island/cover.jpg" alt="Still from Poseidon's Island">
-        </div>
-        <div class="project-card-body">
-          <span class="tag">3D Graphics &amp; Motion Design</span>
-          <h3>Poseidon's Island</h3>
-        </div>
-      </a>
-
-      <a class="project-card" href="projects/memory-cinema.html" data-category="3d-motion">
+      <a class="project-card" href="projects/memory-cinema.html" data-category="immersive" data-keywords="kinetics">
         <div class="project-card-media">
           <img src="assets/images/memory-cinema/cover.jpg" alt="Still from Memory Cinema">
         </div>
         <div class="project-card-body">
-          <span class="tag">3D Graphics &amp; Motion Design</span>
           <h3>Memory Cinema</h3>
         </div>
       </a>
 
-      <a class="project-card" href="projects/vhf.html" data-category="interactives-games">
+      <a class="project-card" href="projects/poseidons-island.html" data-category="animation" data-keywords="museum">
+        <div class="project-card-media">
+          <img src="assets/images/poseidons-island/cover.jpg" alt="Still from Poseidon's Island">
+        </div>
+        <div class="project-card-body">
+          <h3>Poseidon's Island</h3>
+        </div>
+      </a>
+
+      <a class="project-card" href="projects/vhf.html" data-category="games installations" data-keywords="touchscreens">
         <div class="project-card-media">
           <img src="assets/images/vhf/cover.jpg" alt="Still from VHF">
         </div>
         <div class="project-card-body">
-          <span class="tag">Interactives &amp; Games</span>
           <h3>VHF</h3>
         </div>
       </a>
 
-      <a class="project-card" href="projects/edition-of-one.html" data-category="interactives-games">
-        <div class="project-card-media">
-          <img src="assets/images/edition-of-one/cover.jpg" alt="Still from Edition of One">
-        </div>
-        <div class="project-card-body">
-          <span class="tag">Interactives &amp; Games</span>
-          <h3>Edition of One</h3>
-        </div>
-      </a>
-
-      <a class="project-card" href="projects/athens-by-sound.html" data-category="interactives-games">
-        <div class="project-card-media">
-          <img src="assets/images/athens-by-sound/02.jpg" alt="Still from Athens by Sound">
-        </div>
-        <div class="project-card-body">
-          <span class="tag">Interactives &amp; Games</span>
-          <h3>Athens by Sound</h3>
-        </div>
-      </a>
-
-      <a class="project-card" href="projects/germanos.html" data-category="interactives-games">
+      <a class="project-card" href="projects/germanos.html" data-category="games" data-keywords="kinetics brandexperience">
         <div class="project-card-media">
           <img src="assets/images/germanos/cover.jpg" alt="Still from Germanos">
         </div>
         <div class="project-card-body">
-          <span class="tag">Interactives &amp; Games</span>
           <h3>Germanos</h3>
         </div>
       </a>
 
-      <a class="project-card" href="projects/narcos.html" data-category="interactives-games">
+      <a class="project-card" href="projects/narcos.html" data-category="games" data-keywords="kinetics brandexperience">
         <div class="project-card-media">
           <img src="assets/images/narcos/cover.jpg" alt="Still from Narcos">
         </div>
         <div class="project-card-body">
-          <span class="tag">Interactives &amp; Games</span>
           <h3>Narcos</h3>
         </div>
       </a>
 
-      <a class="project-card" href="projects/ttt.html" data-category="interactives-games">
+      <a class="project-card" href="projects/ttt.html" data-category="games" data-keywords="kinetics">
         <div class="project-card-media">
           <img src="assets/images/ttt/cover.jpg" alt="Still from TTT">
         </div>
         <div class="project-card-body">
-          <span class="tag">Interactives &amp; Games</span>
           <h3>TTT</h3>
         </div>
       </a>
 
-      <a class="project-card" href="projects/ai-drawer.html" data-category="products-commercial">
+      <a class="project-card" href="projects/ferro.html" data-category="installations" data-keywords="electronics kinetics">
         <div class="project-card-media">
-          <img src="assets/images/ai-drawer/cover.jpg" alt="Still from AI Drawer">
+          <img src="assets/images/ferro/cover.jpg" alt="Still from Ferro">
         </div>
         <div class="project-card-body">
-          <span class="tag">Products &amp; Commercial</span>
-          <h3>AI Drawer</h3>
+          <h3>Ferro</h3>
         </div>
       </a>
 
-      <a class="project-card" href="projects/komprai.html" data-category="realities">
+      <a class="project-card" href="projects/kalliplokamos.html" data-category="installations" data-keywords="electronics">
+        <div class="project-card-media">
+          <img src="assets/images/kalliplokamos/cover.jpg" alt="Still from Kalliplokamos">
+        </div>
+        <div class="project-card-body">
+          <h3>Kalliplokamos</h3>
+        </div>
+      </a>
+
+      <a class="project-card" href="projects/ermafa.html" data-category="installations" data-keywords="touchscreens">
+        <div class="project-card-media">
+          <img src="assets/images/ermafa/cover.jpg" alt="Still from Ermafa">
+        </div>
+        <div class="project-card-body">
+          <h3>Ermafa</h3>
+        </div>
+      </a>
+
+      <a class="project-card" href="projects/edition-of-one.html" data-category="installations" data-keywords="ai">
+        <div class="project-card-media">
+          <img src="assets/images/edition-of-one/cover.jpg" alt="Still from Edition of One">
+        </div>
+        <div class="project-card-body">
+          <h3>Edition of One</h3>
+        </div>
+      </a>
+
+      <a class="project-card" href="projects/athens-by-sound.html" data-category="installations" data-keywords="">
+        <div class="project-card-media">
+          <img src="assets/images/athens-by-sound/02.jpg" alt="Still from Athens by Sound">
+        </div>
+        <div class="project-card-body">
+          <h3>Athens by Sound</h3>
+        </div>
+      </a>
+
+      <a class="project-card" href="projects/potential-drawer.html" data-category="installations" data-keywords="ai touchscreens brandexperience">
+        <div class="project-card-media">
+          <img src="assets/images/potential-drawer/cover.jpg" alt="Still from Potential Drawer">
+        </div>
+        <div class="project-card-body">
+          <h3>Potential Drawer</h3>
+        </div>
+      </a>
+
+      <a class="project-card" href="projects/komprai.html" data-category="music" data-keywords="vr video">
         <div class="project-card-media">
           <img src="assets/images/komprai/cover.jpg" alt="Still from Komprai">
         </div>
         <div class="project-card-body">
-          <span class="tag">Realities</span>
           <h3>Komprai</h3>
         </div>
       </a>
