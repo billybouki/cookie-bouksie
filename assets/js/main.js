@@ -50,104 +50,104 @@
     {
       title: "Poseidon's Island",
       summary: 'A 20-minute 3D animation produced for Vmuseum Corfu.',
-      cover: 'assets/images/poseidons-island/cover.jpg',
-      url: 'projects/poseidons-island.html'
+      cover: 'assets/images/02-poseidons-island/cover.jpg',
+      url: 'projects/02-poseidons-island.html'
     },
     {
       title: 'Love My Self',
       summary: 'A single continuous-take music video shot on a 360 camera in Mavromichali, Athens.',
-      cover: 'assets/images/love-my-self/cover.jpg',
-      url: 'projects/love-my-self.html'
+      cover: 'assets/images/12-love-my-self/cover.jpg',
+      url: 'projects/12-love-my-self.html'
     },
     {
       title: 'Ermafa',
       summary: 'A real-time touchscreen table installation visualizing industrial recycling machines.',
-      cover: 'assets/images/ermafa/cover.jpg',
-      url: 'projects/ermafa.html'
+      cover: 'assets/images/05-ermafa/cover.jpg',
+      url: 'projects/05-ermafa.html'
     },
     {
       title: 'Verkehrshaus',
       summary: 'A multiplayer energy-planning game that puts visitors in the seat of a power plant manager, trading resources across borders.',
-      cover: 'assets/images/verkehrshaus/cover.jpg',
-      url: 'projects/verkehrshaus.html'
+      cover: 'assets/images/04-verkehrshaus/cover.jpg',
+      url: 'projects/04-verkehrshaus.html'
     },
     {
       title: 'Potential Drawer',
       summary: 'An AI-driven touchscreen brand experience generating imagery in real time.',
-      cover: 'assets/images/potential-drawer/cover.jpg',
-      url: 'projects/potential-drawer.html'
+      cover: 'assets/images/03-potential-drawer/cover.jpg',
+      url: 'projects/03-potential-drawer.html'
     },
     {
       title: 'Edition of One',
       summary: 'An AI-driven installation generating a unique, one-of-a-kind poster for each visitor.',
-      cover: 'assets/images/edition-of-one/cover.jpg',
-      url: 'projects/edition-of-one.html'
+      cover: 'assets/images/01-edition-of-one/cover.jpg',
+      url: 'projects/01-edition-of-one.html'
     },
     {
       title: 'Athens by Sound',
       summary: 'An immersive sound installation with hanging headphone listening stations.',
-      cover: 'assets/images/athens-by-sound/02.jpg',
-      url: 'projects/athens-by-sound.html'
+      cover: 'assets/images/08-athens-by-sound/02.jpg',
+      url: 'projects/08-athens-by-sound.html'
     },
     {
       title: 'Germanos',
       summary: 'A real-time 3D character animation loop for an interactive brand experience.',
-      cover: 'assets/images/germanos/cover.jpg',
-      url: 'projects/germanos.html'
+      cover: 'assets/images/11-germanos/cover.jpg',
+      url: 'projects/11-germanos.html'
     },
     {
       title: 'Memory Cinema',
       summary: 'A generative visualization built from captured movement data.',
-      cover: 'assets/images/memory-cinema/cover.jpg',
-      url: 'projects/memory-cinema.html'
+      cover: 'assets/images/13-memory-cinema/cover.jpg',
+      url: 'projects/13-memory-cinema.html'
     },
     {
       title: 'Narcos: Manhunt',
       summary: 'An immersive, Narcos-branded interactive experience combining set design with a treadmill game.',
-      cover: 'assets/images/narcos-manhunt/cover.jpg',
-      url: 'projects/narcos-manhunt.html'
+      cover: 'assets/images/14-narcos-manhunt/cover.jpg',
+      url: 'projects/14-narcos-manhunt.html'
     },
     {
       title: 'Siemens Markenfilm',
       summary: 'A projection-mapping installation using illuminated geometry and animated visuals.',
-      cover: 'assets/images/siemens-markenfilm/cover.jpg',
-      url: 'projects/siemens-markenfilm.html'
+      cover: 'assets/images/06-siemens-markenfilm/cover.jpg',
+      url: 'projects/06-siemens-markenfilm.html'
     },
     {
       title: 'TTT',
       summary: 'A motion-tracked table tennis game with real-time player analytics.',
-      cover: 'assets/images/ttt/cover.jpg',
-      url: 'projects/ttt.html'
+      cover: 'assets/images/16-ttt/cover.jpg',
+      url: 'projects/16-ttt.html'
     },
     {
       title: 'Ferro',
       summary: 'A kinetic sculpture driving a ferrofluid surface with a custom electromagnetic coil array.',
-      cover: 'assets/images/ferro/cover.jpg',
-      url: 'projects/ferro.html'
+      cover: 'assets/images/09-ferro/cover.jpg',
+      url: 'projects/09-ferro.html'
     },
     {
       title: 'Kalliplokamos',
       summary: 'A luminous, wire-built human figure — a light sculpture in electroluminescent wire.',
-      cover: 'assets/images/kalliplokamos/cover.jpg',
-      url: 'projects/kalliplokamos.html'
+      cover: 'assets/images/07-kalliplokamos/cover.jpg',
+      url: 'projects/07-kalliplokamos.html'
     },
     {
       title: 'Vagonetto',
       summary: 'A museum installation with floor projection, sculptural forms, and interactive lighting.',
-      cover: 'assets/images/vagonetto/vagonetto_16.jpg',
-      url: 'projects/vagonetto.html'
+      cover: 'assets/images/17-vagonetto/vagonetto_16.jpg',
+      url: 'projects/17-vagonetto.html'
     },
     {
       title: 'Tee Tiler',
       summary: 'A touchscreen kiosk installation for designing and customizing your own t-shirt in-store.',
-      cover: 'assets/images/tee-tiler/cover.png',
-      url: 'projects/tee-tiler.html'
+      cover: 'assets/images/15-tee-tiler/cover.png',
+      url: 'projects/15-tee-tiler.html'
     },
     {
       title: 'Gendarmenmarkt Light Festival',
       summary: 'A projection-mapping piece created for the Gendarmenmarkt light festival, Berlin.',
-      cover: 'assets/images/gendarmenmarkt-light-festival/01.jpg',
-      url: 'projects/gendarmenmarkt-light-festival.html'
+      cover: 'assets/images/10-gendarmenmarkt-light-festival/01.jpg',
+      url: 'projects/10-gendarmenmarkt-light-festival.html'
     }
   ];
 

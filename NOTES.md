@@ -2,36 +2,13 @@
 
 Status snapshot for whoever (or whichever Claude session) picks this up next.
 
-## Immediate pending requests (asked, not yet done)
+## To-do
 
-From the end of this session, Billy asked for the following — none of this is
-implemented yet, do it first:
-
-1. **Works page sorting** — DONE this session: cards in `works.html` are now
-   grouped by category (matching the filter button order) instead of
-   insertion order, and a short keyword line was added under the `<h1>`
-   summarizing the category range. Revisit if the grid still feels "stuffed"
-   with more projects added.
-2. **Featured project (Home) — typing animation** — NOT done. Add a small
-   typewriter-style reveal effect to the featured project title (and/or
-   summary) in `assets/js/main.js`, inside the `render()` function of the
-   featured-project-cycler IIFE (search for `FEATURED_PROJECTS`). Keep it
-   subtle/quick, not gimmicky.
-3. **Featured project — auto-advance** — NOT done. Currently the "Next →"
-   button only advances on click. Add a `setInterval` (e.g. every 5-6s) that
-   auto-advances through `FEATURED_PROJECTS`, starting automatically on page
-   load (so it moves to the *second* project on its own, per the request).
-   Clicking "Next" manually should probably reset the timer so it doesn't
-   double-advance right after a manual click.
-4. **More Works-page clarity** — the keyword line (item 1) was a first pass;
-   Billy may want more — ask before over-building this.
-5. **Collect more images** — "from the current website and elsewhere." This
-   is vague — the old WordPress site (bouksi.com) was hacked and may or may
-   not still be reachable/worth scraping; there's also the earlier static
-   attempt at `D:\__Portfolio\macbook\my-website\images\` which still has
-   unused folders (e.g. `misc/JACOB`, `movies/REVOLUTION`, `music/*`) that
-   were never migrated. Ask Billy where exactly he wants images pulled from
-   before doing anything — don't scrape live sites without confirming scope.
+1. **Copy** — write/finalize project text content across pages.
+2. **B&W cover images** — treat project cover images in black &amp; white.
+3. **Separate old and new projects** — distinguish older vs. newer work
+   somewhere in the Works presentation (grouping, label, or similar — not
+   yet decided).
 
 ## New asset folders with NO project page yet
 
