@@ -124,13 +124,11 @@ Photobooth, Pinball, Screamers.
   (branch `master`).
 - **Live via GitHub Pages**: https://billybouki.github.io/cookie-bouksie/index.html
   — auto-updates on push to `master`, no separate deploy step needed.
-- **Custom domain in progress (2026-09-04)**: `CNAME` file added to repo root
-  (bouksi.com), Namecheap DNS updated (4 A records to GitHub Pages IPs +
-  `www` CNAME to `billybouki.github.io`). GitHub confirms "Your site is live
-  at http://bouksi.com/" — DNS has propagated enough. Still finishing:
-  GitHub's own "DNS Check" and HTTPS certificate issuance (Enforce HTTPS
-  was greyed out, pending). Once that clears, https://bouksi.com should be
-  the final canonical URL.
+- **Custom domain live (confirmed 2026-09-04)**: `CNAME` file added to repo
+  root (bouksi.com), Namecheap DNS updated (4 A records to GitHub Pages IPs +
+  `www` CNAME to `billybouki.github.io`). HTTPS certificate is issued and
+  approved for both `bouksi.com` and `www.bouksi.com` (expires 2026-12-03),
+  Enforce HTTPS is on. **https://bouksi.com is the live canonical URL.**
 - `gh` CLI is not installed in this environment — repo creation/pushes were
   done by Billy creating the repo manually and this session adding the
   remote + pushing over HTTPS (credential manager handled auth silently).
