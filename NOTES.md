@@ -10,7 +10,63 @@ Status snapshot for whoever (or whichever Claude session) picks this up next.
    somewhere in the Works presentation (grouping, label, or similar — not
    yet decided).
 
+## Pending reorder (agreed 2026-09-04, not yet applied)
+
+Billy wants projects 08–20 renumbered (folders + pages + all cross-refs):
+08=Landmarks of 1821 (was 20), 09=Ferro (unchanged), 10=Gendarmenmarkt
+(unchanged), 11=Memory Cinema (was 13), 12=TTT (was 16), 13=Germanos (was
+11), then Athens by Sound, Love My Self, Narcos: Manhunt, Tee Tiler,
+Vagonetto, Jacob Collier, Music Production shift down to fill 14–20 in
+their original relative order. Confirmed with Billy but deliberately not
+yet executed — do this as its own pass (folder renames + every href +
+`works.html` grid + project-nav chain + any image paths), separate from
+content work, to keep it reviewable.
+
 ## New asset folders with NO project page yet
+
+**DONE (2026-09-04)** — `18-jacob-collier-one-man-tour.html` built from the
+existing `assets/images/jacob-collier-one-man-tour/` source folder (raw
+360-camera photos + a stage screenshot), optimized into
+`assets/images/18-jacob-collier-one-man-tour/`, wired into `works.html`
+(category **Music Various**, keyword **Video**). Year (2016–2017) is
+inferred from photo filename timestamps, not confirmed by Billy. Still
+needs an actual tour video link/embed — placeholder line ("Why not watch a
+video?") and a TODO comment mark the spot.
+
+**DONE (2026-09-04)** — `20-landmarks-of-1821.html` built following the
+`01-edition-of-one.html` structure (page-top wrapper, no tag/meta block,
+`span.mono` section labels) per Billy's request, using copy from
+`notes/project-copy-backup.md`. Source images
+(`assets/images/20-landmarks-of-1821/`) were raw PNGs+JPGs dumped by Billy;
+PNGs converted to JPEG and originals discarded per his instruction. Client
+named as ERT from the copy but exact series title, year, and Billy's
+specific role are still unconfirmed (TODO left in place). Category set to
+**Various** as a neutral placeholder — Billy said Various taxonomy is
+"we'll do that later," so this should be revisited once that's decided.
+
+Both 18 and 20 are wired into the project-nav loop
+(`17 → 18 → 20 → 01`) and added to `works.html`, but **not** added to the
+homepage `FEATURED_PROJECTS` carousel, since Billy trimmed that list to a
+fixed set (01, 02, 03, 04, 06, 07) earlier this session.
+
+**DONE (2026-09-04)** — populated real body copy (from
+`notes/project-copy-backup.md`) into six previously-placeholder pages,
+replacing `[Intro/Closing text goes here.]` stand-ins: `06-siemens-markenfilm`
+(now has Year 2014, Client "Siemens Home Appliances" confirmed from the
+copy), `07-kalliplokamos`, `11-germanos` (Client "Germanos" now confirmed),
+`13-memory-cinema` (hero summary and `<span class="tag">` were previously
+wrong — guessed from images alone as a motion-capture/3D-Graphics piece;
+the real copy says it's a VR musical film, tag corrected to **Immersive**
+to match `works.html`), `14-narcos-manhunt` (confirmed the treadmill photo
+IS one of the four branded games, not a mismatched/separate project as
+previously flagged — Client set to Netflix, Role to "Game design &
+production, Intolight"), `15-tee-tiler`, `16-ttt`. Role/Client/Year still
+TBD wherever the backup copy didn't state them explicitly — did not guess
+beyond what the copy says.
+
+Billy has also since added a raw `assets/images/19-music-production/`
+folder (one image, `unnamed.png`, no description text) with no page built
+yet — needs actual copy from Billy before a page can be written.
 
 **DONE** — `ferro.html` and `kalliplokamos.html` built, wired into
 `works.html` (category **Installations** in the new taxonomy, keyword
@@ -66,10 +122,15 @@ Photobooth, Pinball, Screamers.
 
 - Git repo initialized, pushed to `https://github.com/billybouki/cookie-bouksie.git`
   (branch `master`).
-- **Not yet connected to Netlify.** Next step per the original brief: connect
-  this GitHub repo to Netlify for auto-deploy, then point Namecheap DNS at
-  it, confirm it works, then cancel the Namecheap hosting plan (no email on
-  the domain, so no migration blocker there).
+- **Live via GitHub Pages**: https://billybouki.github.io/cookie-bouksie/index.html
+  — auto-updates on push to `master`, no separate deploy step needed.
+- **Custom domain in progress (2026-09-04)**: `CNAME` file added to repo root
+  (bouksi.com), Namecheap DNS updated (4 A records to GitHub Pages IPs +
+  `www` CNAME to `billybouki.github.io`). GitHub confirms "Your site is live
+  at http://bouksi.com/" — DNS has propagated enough. Still finishing:
+  GitHub's own "DNS Check" and HTTPS certificate issuance (Enforce HTTPS
+  was greyed out, pending). Once that clears, https://bouksi.com should be
+  the final canonical URL.
 - `gh` CLI is not installed in this environment — repo creation/pushes were
   done by Billy creating the repo manually and this session adding the
   remote + pushing over HTTPS (credential manager handled auth silently).

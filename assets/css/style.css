@@ -282,6 +282,15 @@ main { display: block; }
   margin-bottom: 0;
 }
 
+.hero-emphasis {
+  font-family: 'Archivo Black', Impact, sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  line-height: 1;
+  display: inline-block;
+  vertical-align: -0.1em;
+}
+
 .page-top h1 {
   margin-bottom: 0;
 }
@@ -369,7 +378,7 @@ main { display: block; }
 
 @media (prefers-reduced-motion: no-preference) {
   .featured-rule-wave {
-    animation: featured-rule-travel 4s linear infinite;
+    animation: featured-rule-travel 8s linear infinite;
   }
 }
 
@@ -763,8 +772,8 @@ main { display: block; }
   padding: var(--indent-0);
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: flex-end;
+  gap: 1.5rem;
   font-family: 'Space Mono', monospace;
   font-size: 0.8rem;
   text-transform: uppercase;
