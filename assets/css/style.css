@@ -288,7 +288,7 @@ main { display: block; }
   font-size: clamp(1.75rem, 4vw, 3rem);
   line-height: 1;
   display: inline-block;
-  vertical-align: -0.1em;
+  vertical-align: baseline;
 }
 
 .page-top h1 {
@@ -665,6 +665,18 @@ main { display: block; }
   cursor: pointer;
 }
 
+.gallery-load-more-row {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.gallery-load-more-row .btn {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-family: 'Space Mono', monospace;
+}
+
 /* ---- project page template ----------------------------------------------------- */
 
 .project-hero {
@@ -729,6 +741,11 @@ main { display: block; }
 
 .project-media-row .project-media { margin: 0; }
 
+.project-media-row-right {
+  max-width: 54ch; /* 90% of the default 60ch */
+  margin-left: auto;
+}
+
 .project-media img,
 .project-media video {
   width: 100%;
@@ -757,6 +774,54 @@ main { display: block; }
   letter-spacing: 0.03em;
   opacity: 0.7;
   margin-top: 0.6rem;
+}
+
+/* ---- 360 panorama viewer (Pannellum) -------------------------------------------- */
+
+.panorama-viewer {
+  position: relative;
+  width: 50%;
+  aspect-ratio: 16 / 9;
+  border: 2px solid var(--fg);
+  background: #000;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .panorama-viewer { width: 100%; }
+}
+
+.panorama-scene-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  max-width: 50%;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 700px) {
+  .panorama-scene-grid { max-width: 100%; }
+}
+
+.panorama-scene-thumb {
+  display: block;
+  padding: 0;
+  border: 2px solid var(--fg);
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0.55;
+}
+
+.panorama-scene-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.panorama-scene-thumb[aria-pressed="true"] {
+  opacity: 1;
+  border-color: var(--accent);
 }
 
 .project-nav {

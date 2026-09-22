@@ -343,20 +343,84 @@
   });
 })();
 
-// Gallery video mute toggle — each clip autoplays muted; the overlay
-// button lets a visitor turn its sound on without leaving the grid.
+// Gallery — renders window.GALLERY_MEDIA (assets/js/gallery-media.js) into
+// gallery.html's grid in a shuffled order, 20 items at a time, with a
+// "Load more" button that reveals the next 20 until the pool runs out.
 (function () {
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.gallery-grid .mute-btn').forEach(function (btn) {
+  var BATCH_SIZE = 20;
+
+  function shuffle(list) {
+    for (var i = list.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = list[i];
+      list[i] = list[j];
+      list[j] = tmp;
+    }
+    return list;
+  }
+
+  function buildItem(item) {
+    if (item.type === 'video') {
+      var wrap = document.createElement('div');
+      wrap.className = 'gallery-video';
+
+      var video = document.createElement('video');
+      video.src = item.src;
+      video.autoplay = true;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'mute-btn';
+      btn.setAttribute('aria-pressed', 'false');
+      btn.setAttribute('aria-label', 'Unmute');
+      btn.textContent = '🔇';
       btn.addEventListener('click', function (e) {
         e.preventDefault();
-        var video = btn.previousElementSibling;
-        if (!video) return;
         video.muted = !video.muted;
         btn.textContent = video.muted ? '🔇' : '🔊';
         btn.setAttribute('aria-pressed', video.muted ? 'false' : 'true');
         btn.setAttribute('aria-label', video.muted ? 'Unmute' : 'Mute');
       });
-    });
+
+      wrap.appendChild(video);
+      wrap.appendChild(btn);
+      return wrap;
+    }
+
+    var link = document.createElement('a');
+    link.href = item.src;
+    link.target = '_blank';
+
+    var img = document.createElement('img');
+    img.src = item.src;
+    img.alt = '';
+    img.loading = 'lazy';
+
+    link.appendChild(img);
+    return link;
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var grid = document.getElementById('gallery-grid');
+    var loadMoreBtn = document.getElementById('gallery-load-more');
+    if (!grid || !window.GALLERY_MEDIA) return;
+
+    var pool = shuffle(window.GALLERY_MEDIA.slice());
+    var shown = 0;
+
+    function renderNextBatch() {
+      var next = pool.slice(shown, shown + BATCH_SIZE);
+      next.forEach(function (item) {
+        grid.appendChild(buildItem(item));
+      });
+      shown += next.length;
+      if (loadMoreBtn) loadMoreBtn.hidden = shown >= pool.length;
+    }
+
+    renderNextBatch();
+    if (loadMoreBtn) loadMoreBtn.addEventListener('click', renderNextBatch);
   });
 })();

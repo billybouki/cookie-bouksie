@@ -6,6 +6,7 @@
 <title>Jacob Collier: One Man Tour — Bouksi</title>
 <script>(function(){try{var p=localStorage.getItem('bouksi-palette');if(p)document.documentElement.setAttribute('data-palette',p);}catch(e){}})();</script>
 <link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/vendor/pannellum.css">
 </head>
 <body>
 
@@ -33,56 +34,45 @@
 <main>
 
   <section class="project-hero">
-    <span class="tag">Music</span>
     <h1>Jacob Collier: One Man Tour</h1>
     <p>Video operator on parts of the one man band tour in Europe, Canada and the US.</p>
+  </section>
 
-    <div class="project-meta">
-      <div class="project-meta-item">
-        <span class="mono">Role</span>
-        <span>Video Operator</span>
-      </div>
-      <div class="project-meta-item">
-        <span class="mono">Client</span>
-        <span>Jacob Collier</span>
-      </div>
-      <div class="project-meta-item">
-        <span class="mono">Year</span>
-        <!-- TODO: confirm exact tour dates — inferred from photo timestamps, Nov 2016–Jan 2017 -->
-        <span>2016&ndash;2017</span>
-      </div>
+  <section class="project-block project-block-split">
+    <div class="project-block-text">
+      <span class="mono">What</span>
+      <p>Operated a generative video system, being driven by Jacob Collier's Live loop engines and harmonies.</p>
     </div>
+    <figure class="project-media project-media-sm">
+      <img src="../assets/images/18-jacob-collier-one-man-tour/cover.jpg" alt="Generative visuals of Jacob Collier's face, multiplied and harmonised in sync with his loop engine, projected on stage behind him.">
+      <figcaption>Generative visuals driven live by the loop engine, projected behind him on stage.</figcaption>
+    </figure>
   </section>
 
   <section class="project-block project-block-text">
-    <span class="mono">What</span>
-    <p>Operated a generative video system, being driven by Jacob Collier's Live loop engines and harmonies.</p>
-  </section>
+    <span class="mono">360&deg; on site</span>
+    <p>Shot on a 360 camera during the tour. Drag to look around.</p>
 
-  <figure class="project-block project-media">
-    <img src="../assets/images/18-jacob-collier-one-man-tour/cover.jpg" alt="Generative visuals of Jacob Collier's face, multiplied and harmonised in sync with his loop engine, projected on stage behind him.">
-    <figcaption>Generative visuals driven live by the loop engine, projected behind him on stage.</figcaption>
-  </figure>
-
-  <div class="project-media-row">
-    <figure class="project-media">
-      <img src="../assets/images/18-jacob-collier-one-man-tour/02.jpg" alt="360-degree photo of the venue backstage and gear setup, with a projector mounted on the balcony railing.">
-      <figcaption>Venue and gear, shot on a 360 camera during the tour.</figcaption>
-    </figure>
-    <figure class="project-media">
-      <img src="../assets/images/18-jacob-collier-one-man-tour/01.jpg" alt="360-degree photo of a packed theatre audience before the show.">
-      <figcaption>A full house, somewhere along the tour.</figcaption>
-    </figure>
-  </div>
-
-  <section class="project-block project-block-text">
-    <!-- TODO: Billy — embed the actual tour video here once we have a link/file -->
-    <p>Why not watch a video?</p>
+    <div id="jacob-collier-panorama" class="panorama-viewer" role="img" aria-label="360-degree photo, currently showing the venue backstage and gear setup"></div>
+    <div class="panorama-scene-grid" role="group" aria-label="Panorama scene">
+      <button type="button" class="panorama-scene-thumb" data-scene="venue" aria-pressed="true">
+        <img src="../assets/images/18-jacob-collier-one-man-tour/02.jpg" alt="Venue and gear" loading="lazy">
+      </button>
+      <button type="button" class="panorama-scene-thumb" data-scene="crowd" aria-pressed="false">
+        <img src="../assets/images/18-jacob-collier-one-man-tour/01.jpg" alt="Full house" loading="lazy">
+      </button>
+      <button type="button" class="panorama-scene-thumb" data-scene="stage-view" aria-pressed="false">
+        <img src="../assets/images/18-jacob-collier-one-man-tour/03.jpg" alt="View from the stage into the crowd" loading="lazy">
+      </button>
+      <button type="button" class="panorama-scene-thumb" data-scene="theatre" aria-pressed="false">
+        <img src="../assets/images/18-jacob-collier-one-man-tour/04.jpg" alt="Ornate red theatre balconies, packed with the crowd" loading="lazy">
+      </button>
+    </div>
   </section>
 
   <nav class="project-nav">
     <a class="btn btn-outline" href="../works.html">&larr; All works</a>
-    <a class="btn" href="20-landmarks-of-1821.html">Next project &rarr;</a>
+    <a class="btn" href="09-ferro.html">Next project &rarr;</a>
   </nav>
 
 </main>
@@ -92,6 +82,62 @@
   <a href="../about.html">Get in touch</a>
 </footer>
 
+<script src="../assets/js/vendor/pannellum.js"></script>
 <script src="../assets/js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var container = document.getElementById('jacob-collier-panorama');
+    if (!container || !window.pannellum) return;
+
+    var scenes = {
+      venue: {
+        label: 'the venue backstage and gear setup',
+        title: 'Venue and gear',
+        panorama: '../assets/images/18-jacob-collier-one-man-tour/02.jpg'
+      },
+      crowd: {
+        label: 'a packed theatre audience before the show',
+        title: 'Full house',
+        panorama: '../assets/images/18-jacob-collier-one-man-tour/01.jpg'
+      },
+      'stage-view': {
+        label: 'the view from the stage into the crowd',
+        title: 'From the stage',
+        panorama: '../assets/images/18-jacob-collier-one-man-tour/03.jpg'
+      },
+      theatre: {
+        label: 'an ornate red theatre, balconies packed with the crowd',
+        title: 'Theatre balconies',
+        panorama: '../assets/images/18-jacob-collier-one-man-tour/04.jpg'
+      }
+    };
+
+    var pannellumScenes = {};
+    Object.keys(scenes).forEach(function (key) {
+      pannellumScenes[key] = {
+        type: 'equirectangular',
+        panorama: scenes[key].panorama,
+        title: scenes[key].title
+      };
+    });
+
+    var viewer = pannellum.viewer('jacob-collier-panorama', {
+      default: { firstScene: 'venue', sceneFadeDuration: 800 },
+      scenes: pannellumScenes
+    });
+
+    var picker = document.querySelector('.panorama-scene-grid');
+    if (!picker) return;
+    picker.addEventListener('click', function (e) {
+      var btn = e.target.closest('button[data-scene]');
+      if (!btn || !scenes[btn.dataset.scene]) return;
+      viewer.loadScene(btn.dataset.scene);
+      container.setAttribute('aria-label', '360-degree photo, currently showing ' + scenes[btn.dataset.scene].label);
+      picker.querySelectorAll('button').forEach(function (b) {
+        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+      });
+    });
+  });
+</script>
 </body>
 </html>

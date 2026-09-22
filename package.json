@@ -4,7 +4,8 @@
   "private": true,
   "description": "bouksi.com — static site",
   "scripts": {
-    "dev": "browser-sync start --server --files \"**/*.html, assets/css/**/*.css, assets/js/**/*.js\" --no-notify"
+    "dev": "browser-sync start --server --files \"**/*.html, assets/css/**/*.css, assets/js/**/*.js\" --no-notify",
+    "build:gallery": "node scripts/build-gallery-manifest.js"
   },
   "devDependencies": {
     "browser-sync": "^3.0.2"
