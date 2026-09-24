@@ -19,53 +19,92 @@
   </nav>
 </header>
 
-<div class="palette-switcher-row">
-  <div class="palette-switcher" role="group" aria-label="Colour palette">
-    <button type="button" data-palette="cream" class="palette-swatch-cream" aria-pressed="true" aria-label="Cream palette"></button>
-    <button type="button" data-palette="sky" class="palette-swatch-sky" aria-pressed="false" aria-label="Sky palette"></button>
-    <button type="button" data-palette="mustard" class="palette-swatch-mustard" aria-pressed="false" aria-label="Mustard palette"></button>
-    <button type="button" data-palette="teal" class="palette-swatch-teal" aria-pressed="false" aria-label="Teal palette"></button>
-    <button type="button" data-palette="rose" class="palette-swatch-rose" aria-pressed="false" aria-label="Rose palette"></button>
-    <button type="button" data-palette="ink" class="palette-swatch-ink" aria-pressed="false" aria-label="Ink palette"></button>
-    <button type="button" data-palette="plum" class="palette-swatch-plum" aria-pressed="false" aria-label="Plum palette"></button>
-  </div>
-</div>
-
 <main>
 
   <section class="project-hero">
-    <span class="tag">Installations</span>
-    <h1>Sidiros</h1>
+    <div class="page-top">
+      <h1>Sidiros</h1>
+      <div class="palette-switcher" role="group" aria-label="Colour palette">
+        <button type="button" data-palette="cream" class="palette-swatch-cream" aria-pressed="true" aria-label="Cream palette"></button>
+        <button type="button" data-palette="sky" class="palette-swatch-sky" aria-pressed="false" aria-label="Sky palette"></button>
+        <button type="button" data-palette="mustard" class="palette-swatch-mustard" aria-pressed="false" aria-label="Mustard palette"></button>
+        <button type="button" data-palette="teal" class="palette-swatch-teal" aria-pressed="false" aria-label="Teal palette"></button>
+        <button type="button" data-palette="rose" class="palette-swatch-rose" aria-pressed="false" aria-label="Rose palette"></button>
+        <button type="button" data-palette="ink" class="palette-swatch-ink" aria-pressed="false" aria-label="Ink palette"></button>
+        <button type="button" data-palette="plum" class="palette-swatch-plum" aria-pressed="false" aria-label="Plum palette"></button>
+      </div>
+    </div>
     <p>A machine manipulating magnetic fields on a surface, to instantly create sculptures out of solidified ferrofluid.</p>
+  </section>
 
-    <div class="project-meta">
-      <div class="project-meta-item">
-        <span class="mono">Role</span>
-        <span>Artist in residence, Artificial Rome</span>
-      </div>
-      <div class="project-meta-item">
-        <span class="mono">Client</span>
-        <span>Self-initiated</span>
-      </div>
-      <div class="project-meta-item">
-        <span class="mono">Year</span>
-        <!-- TODO: confirm exact years — copy says "two, on again off again, years" during the Artificial Rome residency -->
-        <span>TBD</span>
-      </div>
+  <section class="project-block project-block-split">
+    <div class="project-block-text">
+      <span class="mono">What</span>
+      <p>Sidiros is one of my favourite projects that never quite happened. It uses the real-time creation of magnetic fields to manipulate ferrofluid into an always-transforming live sculpture, realised over two on-again-off-again years during an artistic residency at Artificial Rome. The premise: a person walks up to a tank filled with ferrofluid, gets face-tracked, and their face is rendered back to them in solidified ferrofluid.</p>
+    </div>
+    <figure class="project-media project-media-sm">
+      <img src="../assets/images/09-ferro/unspecified-1%202.jpg" alt="Overhead view of the ferrofluid tank, a dark filament of fluid rising from the surface as a hand reaches toward it.">
+    </figure>
+  </section>
+
+  <section class="project-block project-block-text">
+    <span class="mono">Resolution</span>
+    <p>A 16-by-16 grid makes for a very low resolution to depict a face. To compensate, taking advantage of the display's physical properties, software was built to change the polarity of the electromagnets &mdash; detecting lines of continuance in the incoming image and creating similar lines of ferrofluid extrusion, rather than simple dots.</p>
+    <div class="project-media-row">
+      <figure class="project-media">
+        <video src="../assets/video/09-ferro/12.10.2019.mp4" controls></video>
+      </figure>
     </div>
   </section>
 
   <section class="project-block project-block-text">
-    <p>Sidiros is one of my favourite projects that never quite happened. It uses the real-time creation of magnetic fields to manipulate ferrofluid into an always-transforming live sculpture, realised over two on-again-off-again years during an artistic residency at Artificial Rome. The premise: a person walks up to a tank filled with ferrofluid, gets face-tracked, and their face is rendered back to them in solidified ferrofluid.</p>
+    <span class="mono">Surface</span>
+    <p>Under field control, the ferrofluid slicks into filaments and blooms across the tank, resolving into pattern and back into stillness.</p>
+    <div class="project-media-row">
+      <figure class="project-media">
+        <img src="../assets/images/09-ferro/12819303_1047485591977107_8534410889916311049_o.jpg" alt="Macro shot of ferrofluid spiking and pooling on the reflective tank surface.">
+      </figure>
+      <figure class="project-media">
+        <img src="../assets/images/09-ferro/unspecified.jpg" alt="Close-up of ferrofluid rippling across the tank under warm light.">
+      </figure>
+    </div>
   </section>
 
-  <figure class="project-block project-media">
-    <img src="../assets/images/09-ferro/01.jpg" alt="">
-    <figcaption>[Image caption]</figcaption>
-  </figure>
+  <section class="project-block project-block-text">
+    <span class="mono">Electronics</span>
+    <p>Driving that many electromagnets in a confined space needed a versatile custom circuit &mdash; able to drive 32 unidirectional electromagnets or motors of up to 1 amp each, controlled via shift registers with just 4 lines of code from an Arduino. Daisy-chaining boards over 4 wires, we're currently driving 160 bipolar magnets from a single Arduino, with headroom to run boards in parallel if a motor needs more than 1 amp.</p>
+    <div class="project-media-row">
+      <figure class="project-media">
+        <img src="../assets/images/09-ferro/cover.jpg" alt="3D render of the electromagnet coil array sitting above its grid of driver boards.">
+      </figure>
+      <figure class="project-media">
+        <img src="../assets/images/09-ferro/02-pcb.jpg" alt="One of the custom driver boards, populated with shift registers and coil drivers.">
+      </figure>
+      <figure class="project-media">
+        <img src="../assets/images/09-ferro/pBaD-EJg.jpeg" alt="Assembling a bank of wound electromagnets onto its driver board.">
+      </figure>
+    </div>
+  </section>
 
   <section class="project-block project-block-text">
-    <p>Driving that many electromagnets in a confined space needed a versatile custom circuit &mdash; able to drive 32 unidirectional electromagnets or motors of up to 1 amp each, controlled via shift registers with just 4 lines of code from an Arduino. Daisy-chaining boards over 4 wires, we're currently driving 160 bipolar magnets from a single Arduino, with headroom to run boards in parallel if a motor needs more than 1 amp.</p>
+    <span class="mono">Build</span>
+    <p>The tank sits on a ring of laser-cut dividers, each pairing a driver board with its own bank of wound electromagnets, cabled together into a single grid.</p>
+    <div class="project-grid" style="margin-top: 1.5rem;">
+      <figure class="project-media"><img src="../assets/images/09-ferro/cropped-unspecified-2.jpeg" alt="The electromagnet grid rig mid-build, wired boards fanning out around a central ring."></figure>
+      <figure class="project-media"><img src="../assets/images/09-ferro/unspecified-2.jpg" alt="Front view of the finished rig on the workbench, lit by two desk lamps."></figure>
+      <figure class="project-media"><img src="../assets/images/09-ferro/unspecified-3.jpg" alt="Closer angle on the wired driver boards ringing the electromagnet grid."></figure>
+      <figure class="project-media"><img src="../assets/images/09-ferro/unspecified-4.jpg" alt="The completed rig lit from both sides, ready to be set beneath the tank."></figure>
+    </div>
+  </section>
+
+  <section class="project-block project-block-split">
+    <div class="project-block-text">
+      <span class="mono">Residency</span>
+      <p>Developed over two on-again-off-again years as a self-initiated project during an artist residency at Artificial Rome, and shown to visitors gathered around the tank.</p>
+    </div>
+    <figure class="project-media project-media-sm">
+      <img src="../assets/images/09-ferro/01.jpg" alt="A group of visitors gathered around the reflective tank during the residency.">
+    </figure>
   </section>
 
   <nav class="project-nav">
